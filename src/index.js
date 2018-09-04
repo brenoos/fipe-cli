@@ -3,6 +3,7 @@ const chalk = require('chalk')
 const clear = require('clear')
 const figlet = require('figlet')
 const emoji = require('node-emoji')
+const cli = require('cli-ux')
 
 class FipeCliCommand extends Command {
   async run() {
