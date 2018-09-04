@@ -1,0 +1,45 @@
+{
+  "name": "fipe-cli",
+  "description": "Aplicação simples em Node.JS para consultar a tabela fipe em linha de comando",
+  "version": "1.0",
+  "author": "Breno Oliveira dos Santos @brenoos",
+  "bin": {
+    "fipe": "./bin/run"
+  },
+  "bugs": "https://github.com/brenoos/fipe-cli/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2",
+    "axios": "^0.18.0",
+    "chalk": "^2.4.1",
+    "clear": "^0.1.0",
+    "figlet": "^1.2.0",
+    "node-emoji": "^1.8.1"
+  },
+  "devDependencies": {
+    "eslint": "^5",
+    "eslint-config-oclif": "^3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/src"
+  ],
+  "homepage": "https://github.com/brenoos/fipe-cli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "bin": "fipe"
+  },
+  "repository": "brenoos/fipe-cli",
+  "scripts": {
+    "posttest": "eslint .",
+    "test": "echo NO TESTS"
+  }
+}
