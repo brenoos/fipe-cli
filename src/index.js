@@ -3,9 +3,11 @@ const chalk = require('chalk')
 const clear = require('clear')
 const figlet = require('figlet')
 const emoji = require('node-emoji')
-const cli = require('cli-ux')
+const inquirer = require('inquirer')
+
 
 class FipeCliCommand extends Command {
+
   async run() {
     const {flags} = this.parse(FipeCliCommand)
     clear()
@@ -15,7 +17,22 @@ class FipeCliCommand extends Command {
       )
     )
     this.log(emoji.emojify(':car:'), chalk.yellow.bold("Bem vindo ao sistema de consulta da Tabela FIPE"), emoji.emojify(':racing_motorcycle:'))
+    
+    let tipo = flags.tipo
+
+    if(!tipo){
+      let responses = await inquirer.prompt([{
+        name: 'tipo',
+        message: 'Selecione um tipo: ',
+        type: 'list',
+        choices: [{name: 'Carro'}, {name: 'Moto'}],
+      }])
+      tipo = responses.tipo
+      this.log(`Você selecionou ${tipo}`)
+    }
+    
   }
+
 }
 
 FipeCliCommand.description = `Describe the command here
